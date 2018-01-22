@@ -40,7 +40,7 @@ Tip 2: you can also add an image using data-image tag
             </li>
             {% endif %}
 
-            {% if is_granted('ROLE_ADMIN') %}
+            {% if is_granted('ROLE_CHEF_DE_PROJET') %}
             <li>
                 <a href="{{ path('projet_index') }}">
                     <i class="material-icons">content_paste</i>

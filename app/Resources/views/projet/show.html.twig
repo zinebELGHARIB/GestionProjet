@@ -39,6 +39,6 @@
     </table>
 
                 <a href="{{ path('projet_index') }}" rel="tooltip" title="Liste des projets" class="btn btn-primary btn-round" >
-                    <i class="material-icons">list</i>    </a>{{ form_start(delete_form) }}<input  type="submit" value="Delete" >{{ form_end(delete_form) }}
+                    <i class="material-icons">list</i>    </a>{{ form_start(delete_form , {'attr': {'onclick': 'return confirm("Voulez-vous vraiment supprimer ce projet?")'}}) }}<input  type="submit" value="Supprimer" >{{ form_end(delete_form) }}
 
 {% endblock %}

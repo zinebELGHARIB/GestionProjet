@@ -4,8 +4,8 @@ security:
 
     role_hierarchy:
         ROLE_CHEF_DE_PROJET:       ROLE_USER
-        ROLE_ADMIN:      ROLE_ADMIN
-        ROLE_SUPER_ADMIN: ROLE_CHEF_DE_PROJET
+        ROLE_ADMIN:      ROLE_CHEF_DE_PROJER
+        ROLE_SUPER_ADMIN: ROLE_ADMIN
 
 
 
