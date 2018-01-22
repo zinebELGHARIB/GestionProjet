@@ -1,0 +1,95 @@
+{% extends 'layout.html.twig' %}
+{% block contentTitle %}
+    <h3><a href="{{ path('tache_index') }}"> Gestion des Tâches</a></h3>
+{% endblock %}
+
+
+{% block container %}
+    <div class="col-lg-8">
+
+        {% include 'ADesignsCalendarBundle::calendar.html.twig' %}
+    </div>
+<div class="row">
+    <div class="col-lg-8 col-md-8">
+        <div class="card card-nav-tabs">
+            <div class="card-header" data-background-color="purple">
+                <div class="nav-tabs-navigation">
+                    <div class="nav-tabs-wrapper">
+                        <h3>Liste des Tâches </h3>
+                    </div>
+                </div>
+            </div>
+            <div class="card-content table-responsive">
+                <table class="table table-hover">
+                    <thead class="text-warning">
+            <tr>
+                <th>Id</th>
+                <th>Reftache</th>
+                <th>Designtache</th>
+                <th>Debuttache</th>
+                <th>Fintache</th>
+                <th>Etat</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for tache in taches %}
+            <tr>
+                <td><a href="{{ path('tache_show', { 'id': tache.id }) }}">{{ tache.id }}</a></td>
+                <td>{{ tache.refTache }}</td>
+                <td>{{ tache.designTache }}</td>
+                <td>{% if tache.debutTache %}{{ tache.debutTache|date('Y-m-d') }}{% endif %}</td>
+                <td>{% if tache.finTache %}{{ tache.finTache|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ tache.etat }}</td>
+                <td class="td-actions text-right">
+                    <a rel="tooltip" title="Afficher" class="btn btn-success btn-simple btn-xs" href="{{ path('tache_show', { 'id': tache.id }) }}"><i class="material-icons">visibility</i></a>
+                    <a rel="tooltip" title="Modifier" class="btn btn-info btn-simple btn-xs" href="{{ path('tache_edit', { 'id': tache.id }) }}"><i class="material-icons">edit</i></a>
+
+                    {#<ul>#}
+                    {#<li>#}
+                    {#<a href="{{ path('tache_show', { 'id': tache.id }) }}">show</a>#}
+                    {#</li>#}
+                    {#<li>#}
+                    {#<a href="{{ path('tache_edit', { 'id': tache.id }) }}">edit</a>#}
+                    {#</li>#}
+                    {#</ul>#}
+                    {#</td>#}
+            </tr>
+        {% endfor %}
+        </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4 col-md-4">
+        <div class="card card-nav-tabs">
+            <div class="card-header" data-background-color="purple">
+                <div class="nav-tabs-navigation">
+                    <div class="nav-tabs-wrapper">
+                        <h3>Ajout / Edition <span class="pull-right"></span></h3>
+                    </div>
+                </div>
+            </div>
+            <div class="card-content">
+
+
+                <div class="card-content" >
+
+                    {{ form_start(form) }}
+
+                    {{ form_widget(form) }}
+
+                    <button type="submit" rel="tooltip" title="Enregistrer" class="btn btn-primary pull-right" href="{{ path('tache_new') }}"><i class="material-icons">save</i></button>
+
+                    {{ form_end(form) }}
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

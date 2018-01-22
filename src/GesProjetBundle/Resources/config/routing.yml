@@ -1,0 +1,9 @@
+calendar_events:
+    path: /json
+    defaults: { _controller: GesProjetBundle:Calendar:loadCalendar }
+    options:
+        expose: true
+
+ges_projet_homepage:
+    path:     /
+    defaults: { _controller: GesProjetBundle:Default:index }

@@ -1,0 +1,154 @@
+
+<div class="sidebar" data-color="purple" data-image="{{ asset('style/img/sidebar-1.jpg') }}">
+    <!--
+Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
+
+Tip 2: you can also add an image using data-image tag
+-->
+    <div class="logo">
+        <a href="#" class="simple-text">
+            Gestion des Projets
+        </a>
+    </div>
+    <div class="sidebar-wrapper">
+        <ul class="nav">
+            <li class="active">
+                <a href="{{ path('dashboard') }}">
+                    <i class="material-icons">dashboard</i>
+                    <p>Tableau de Bord</p>
+                </a>
+            </li>
+            <li>
+                <a href="{{ path('fos_user_security_logout') }}">
+                    <i class="material-icons">person</i>
+                    <p>Utilisateurs</p>
+                </a>
+            </li>
+            <li>
+                <a href="{{ path('fos_user_security_logout') }}">
+                    <i class="material-icons">person</i>
+                    <p>Admin</p>
+                </a>
+            </li>
+            {% if is_granted('ROLE_CHEF_DE_PROJET') %}
+
+            <li>
+                <a href="{{ path('personne_index') }}">
+                    <i class="material-icons">person</i>
+                    <p>Chef de Projet</p>
+                </a>
+            </li>
+            {% endif %}
+
+            {% if is_granted('ROLE_ADMIN') %}
+            <li>
+                <a href="{{ path('projet_index') }}">
+                    <i class="material-icons">content_paste</i>
+                    <p>Projet</p>
+                </a>
+            </li>
+            <li>
+                <a href="{{ path('tache_index') }}">
+                    <i class="material-icons">content_paste</i>
+                    <p>Tache</p>
+                </a>
+            </li>
+
+           {% endif %}
+            {#<li>#}
+                {#<a href="{{ path('departement_index') }}">#}
+                    {#<i class="material-icons">content_paste</i>#}
+                    {#<p>Directions</p>#}
+                {#</a>#}
+            {#</li>#}
+            {#<li>#}
+                {#<a href="{{ path('famille_index') }}">#}
+                    {#<i class="material-icons">content_paste</i>#}
+                    {#<p>Famille d'Articles</p>#}
+                {#</a>#}
+            {#</li>#}
+            {#<li>#}
+                {#<a href="{{ path('article_index') }}">#}
+                    {#<i class="material-icons">content_paste</i>#}
+                    {#<p>Article</p>#}
+                {#</a>#}
+            {#</li>#}
+            {#<li>#}
+                {#<a href="{{ path('personne_index') }}">#}
+                    {#<i class="material-icons">content_paste</i>#}
+                    {#<p>Agent</p>#}
+                {#</a>#}
+            {#</li>#}
+            {#<li>#}
+                {#<a href="{{ path('fournisseur_index') }}">#}
+                    {#<i class="material-icons">library_books</i>#}
+                    {#<p>Fournisseur</p>#}
+                {#</a>#}
+            {#</li>#}
+            {#<li>#}
+                {#<a href="{{ path('bonentree_index') }}">#}
+                    {#<i class="material-icons">bubble_chart</i>#}
+                    {#<p>Entrée en Stock</p>#}
+                {#</a>#}
+            {#</li>#}
+            {#<li>#}
+                {#<a href="{{ path('bonsortie_index') }}">#}
+                    {#<i class="material-icons">location_on</i>#}
+                    {#<p>Ordre de Sortie</p>#}
+                {#</a>#}
+            {#</li>#}
+
+
+
+            {#<li>#}
+                {#<a href="{{ path('ligne_sortie_index') }}">#}
+                    {#<i class="material-icons">location_on</i>#}
+                    {#<p>Sortie</p>#}
+                {#</a>#}
+            {#</li>#}
+            {#<li>#}
+                {#<a href="{{ path('ligne_entree_index') }}">#}
+                    {#<i class="material-icons text-gray">notifications</i>#}
+                    {#<p>Ligne Entree</p>#}
+                {#</a>#}
+            {#</li>#}
+
+            {#<li>#}
+                {#<a href="{{ path('inventaire_index') }}">#}
+                    {#<i class="material-icons text-gray">notifications</i>#}
+                    {#<p>Inventaire</p>#}
+                {#</a>#}
+            {#</li>#}
+            {#<li>#}
+                {#<a href="{{ path('article_pdf') }}">#}
+                    {#<i class="material-icons">content_paste</i>#}
+                    {#<p>Etat du Stock</p>#}
+                {#</a>#}
+            {#</li>#}
+
+            {#<li>#}
+                {#<a href="{{ path('article_affiche') }}">#}
+                    {#<i class="material-icons text-gray">notifications</i>#}
+                    {#<p>Articles à commander</p>#}
+                {#</a>#}
+            {#</li>#}
+
+
+
+            {#<li>#}
+                {#<a href="{{ path('ligne_invent_index') }}">#}
+                    {#<i class="material-icons text-gray">notifications</i>#}
+                    {#<p>Inventaire</p>#}
+                {#</a>#}
+            {#</li>#}
+
+
+            <li class="active-pro">
+                <a href="{{ path('dashboard') }}">
+                    <i class="material-icons">unarchive</i>
+                    <p>Upgrade to PRO</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>

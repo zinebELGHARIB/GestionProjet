@@ -1,0 +1,117 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+
+    {% block fos_user_content %}
+
+    {% endblock fos_user_content %}
+
+{% endblock body %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        errorAlert(".flash-error,.flash-erreur", "#app-annonce", 12000);
+        successAlert(".flash-success,.flash-succes", "#app-annonce", 12000);
+        supprimer(".delete");
+        showModataUrl(".detail");
+        showModataUrl("#user-profile");
+    </script>
+
+    <script>
+        $(".datatable,.dataTable").DataTable({
+            language: {
+                url: "{{ asset('plugin/datatables/lang/French.json') }}"
+            }
+        })
+    </script>
+
+
+    <script>
+        $("input").iCheck({
+            checkboxClass: 'icheckbox_square-blue',
+            radioClass: 'iradio_square-blue',
+            increaseArea: '20%'
+        });
+        $("form").validate({
+            errorClass: "bg-danger",
+            validClass: "bg-success",
+            rules: {
+                'app_user_registration_form[plainPassword][first]': {
+                    required: true,
+                    minlength: 8
+                },
+                'app_user_registration_form[plainPassword][second]': {
+                    required: true,
+                    equalTo: "input[name='app_user_registration_form[plainPassword][first]']"
+                },
+                accept: {
+                    required: true
+                }
+            },
+            errorPlacement: function (error, element) {
+                parent = $(element).closest('div').find("span.error");
+                console.log(element);
+                $(parent).html(error);
+                $(parent).addClass("text-danger");
+            }
+        });
+        $("select").select2();
+
+
+        customJS = {
+            // Pour l'affichage des notifications
+            showNotification: function(from, align, message, time) {
+                color = Math.floor((Math.random() * 4) + 1);
+
+                $.notify({
+                    icon: "notifications",
+                    message: message
+
+                }, {
+                    type: type[color],
+                    timer: time,
+                    placement: {
+                        from: from,
+                        align: align
+                    }
+                });
+            }
+        }
+
+    </script>
+
+    <script type="text/javascript">
+
+        //var _dataMessageFlash =JSON.parse(`{{ app.session.flashBag.all()|json_encode(constant('JSON_HEX_APOS') b-or constant('JSON_HEX_QUOT'))|raw }}`);
+        var _dataMessageFlash = {'success':['test']};
+        $(function(){
+            Object.keys(_dataMessageFlash).forEach(function (key) { console.log(_dataMessageFlash[key], key);
+                _dataMessageFlash[key].forEach(function (message) {
+
+                    var dataCol="black white-text";
+                    var type = ('' + key).toLowerCase()
+                    console.log(type)
+                    if(type === "error" || type === 'errors' || type === 'erreur' || type === 'erreurs'){
+                        dataCol="red accentue-2 white-text";
+                    }else if(type === 'success' || type === 'succes' || type === 'message'){
+                        dataCol='green accentue-4 white-text';
+                    }else{
+                        dataCol='yellow accentue-3 white-text';
+                    }
+                    time = (''+message).split(' ').length * 3000
+                    var $message = $("<div>");
+                    $message.html(message);
+                    customJS.showNotification('top','right',$message, time);
+                });
+            })
+        });
+
+    </script>
+
+{% endblock javascripts %}
+
+
+{% block stylesheets %}
+    {{ parent() }}
+{% endblock stylesheets %}

@@ -1,0 +1,44 @@
+{% extends 'layout.html.twig' %}
+
+{% block container %}
+<div class="row">
+    <div class="col-lg-8 col-md-8">
+        <div class="card card-nav-tabs">
+            <div class="card-header" data-background-color="purple">
+                <div class="nav-tabs-navigation">
+                    <div class="nav-tabs-wrapper">
+                        <h3>Affichage du Projet </h3>
+                    </div>
+                </div>
+            </div>
+            <div class="card-content table-responsive">
+                <table class="table table-hover">
+                    <thead class="text-warning">
+                    <tr>
+                <th>Id</th>
+                <td>{{ projet.id }}</td>
+            </tr>
+            <tr>
+                <th>Refprojet</th>
+                <td>{{ projet.refProjet }}</td>
+            </tr>
+            <tr>
+                <th>Designprojet</th>
+                <td>{{ projet.designProjet }}</td>
+            </tr>
+            <tr>
+                <th>Debutprojet</th>
+                <td>{% if projet.debutProjet %}{{ projet.debutProjet|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Finprojet</th>
+                <td>{% if projet.finProjet %}{{ projet.finProjet|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+
+
+    </table>
+
+                <a href="{{ path('projet_index') }}" rel="tooltip" title="Liste des projets" class="btn btn-primary btn-round" >
+                    <i class="material-icons">list</i>    </a>{{ form_start(delete_form) }}<input  type="submit" value="Delete" >{{ form_end(delete_form) }}
+
+{% endblock %}

@@ -1,0 +1,238 @@
+@media (min-width: 992px) {
+    .typo-line {
+        padding-left: 140px;
+        margin-bottom: 40px;
+        position: relative;
+    }
+    .typo-line .category {
+        transform: translateY(-50%);
+        top: 50%;
+        left: 0px;
+        position: absolute;
+    }
+    .sidebar .nav>li.active-pro {
+        position: absolute;
+        width: 100%;
+        bottom: 10px;
+    }
+}
+
+.center-div
+{
+    margin-top: 150px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.Absolute-Center {
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
+}
+
+.Absolute-Center.is-Responsive {
+    width: 50%;
+    height: 50%;
+    min-width: 200px;
+    max-width: 400px;
+    padding: 40px;
+}
+
+#map {
+    position: relative;
+    width: 100%;
+    height: calc(100% - 60px);
+    margin-top: 70px;
+}
+
+.places-buttons .btn {
+    margin-bottom: 30px
+}
+
+.space-70 {
+    height: 70px;
+    display: block;
+}
+
+.tim-row {
+    margin-bottom: 20px;
+}
+
+.tim-typo {
+    padding-left: 25%;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.tim-typo .tim-note {
+    bottom: 10px;
+    color: #c0c1c2;
+    display: block;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 13px;
+    left: 0;
+    margin-left: 20px;
+    position: absolute;
+    width: 260px;
+}
+
+.tim-row {
+    padding-top: 50px;
+}
+
+.tim-row h3 {
+    margin-top: 0;
+}
+
+.select2-container.select2-container--bootstrap{
+    width: inherit!important;
+}
+
+
+
+/*For CARD*/
+#blockCardToPrint {
+    background-color: #d7d6d3;
+    font-family:'verdana';
+}
+
+#blockCardToPrint .id-card-holder {
+    width: 225px;
+    padding: 4px;
+    margin: 0 auto;
+    background-color: #1f1f1f;
+    border-radius: 5px;
+    position: relative;
+}
+
+#blockCardToPrint .id-card-holder:after {
+    content: '';
+    width: 7px;
+    display: block;
+    background-color: #0a0a0a;
+    height: 100px;
+    position: absolute;
+    top: 105px;
+    border-radius: 0 5px 5px 0;
+}
+
+#blockCardToPrint .id-card-holder:before {
+    content: '';
+    width: 7px;
+    display: block;
+    background-color: #0a0a0a;
+    height: 100px;
+    position: absolute;
+    top: 105px;
+    left: 222px;
+    border-radius: 5px 0 0 5px;
+}
+
+.id-card {
+
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 1.5px 0px #b9b9b9;
+}
+
+.id-card img {
+    margin: 0 auto;
+}
+
+.header img {
+    width: 100px;
+    margin-top: 10px;
+    height: 30px;
+}
+
+.photo img {
+    width: 80px;
+    margin-top: 15px;
+}
+
+#blockCardContentToPrint h2 {
+    font-size: 15px;
+    margin: 5px 0;
+}
+#blockCardContentToPrint h3 {
+    font-size: 12px;
+    margin: 2.5px 0;
+    font-weight: 300;
+}
+#blockCardContentToPrint .qr-code img {
+    width: 50px;
+}
+#blockCardContentToPrint p {
+    font-size: 5px;
+    margin: 2px;
+}
+
+.id-card-hook {
+    background-color: #000;
+    width: 70px;
+    margin: 0 auto;
+    height: 15px;
+    border-radius: 5px 5px 0 0;
+}
+
+#blockCardToPrint .id-card-hook:after {
+    content: '';
+    background-color: #d7d6d3;
+    width: 47px;
+    height: 6px;
+    display: block;
+    margin: 0px auto;
+    position: relative;
+    top: 6px;
+    border-radius: 4px;
+}
+
+#blockCardToPrint .id-card-tag-strip {
+    width: 45px;
+    height: 40px;
+    background-color: #0950ef;
+    margin: 0 auto;
+    border-radius: 5px;
+    position: relative;
+    top: 9px;
+    z-index: 1;
+    border: 1px solid #0041ad;
+}
+
+#blockCardToPrint .id-card-tag-strip:after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: #c1c1c1;
+    position: relative;
+    top: 10px;
+}
+#blockCardToPrint .id-card-tag {
+    width: 0;
+    height: 0;
+    border-left: 100px solid transparent;
+    border-right: 100px solid transparent;
+    border-top: 100px solid #0958db;
+    margin: -10px auto -30px auto;
+}
+#blockCardToPrint .id-card-tag:after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 100px solid #d7d6d3;
+    margin: -10px auto -30px auto;
+    position: relative;
+    top: -130px;
+    left: -50px;
+}
+/*For CARD*/

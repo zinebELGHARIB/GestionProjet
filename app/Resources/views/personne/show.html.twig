@@ -1,0 +1,38 @@
+{% extends 'layout.html.twig' %}
+
+{% block container %}
+<div class="row">
+    <div class="col-lg-8 col-md-8">
+        <div class="card card-nav-tabs">
+            <div class="card-header" data-background-color="purple">
+                <div class="nav-tabs-navigation">
+                    <div class="nav-tabs-wrapper">
+                        <h3>Affichage du Chef de Projet </h3>
+                    </div>
+                </div>
+            </div>
+            <div class="card-content table-responsive">
+                <table class="table table-hover">
+                    <thead class="text-warning">
+                    <tr>
+                <th>Id</th>
+                <td>{{ personne.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ personne.nom }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ personne.prenom }}</td>
+            </tr>
+            <tr>
+                <th>Adresse</th>
+                <td>{{ personne.adresse }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+                <a href="{{ path('personne_index') }}" rel="tooltip" title="Liste des Chefs de Projet" class="btn btn-primary btn-round" >
+                    <i class="material-icons">list</i>    </a>{{ form_start(delete_form) }}<input  type="submit" value="Delete" >{{ form_end(delete_form) }}
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends 'layout.html.twig' %}
+
+{% block container %}
+
+<div class="row">
+    <div class="col-lg-8 col-md-8">
+        <div class="card card-nav-tabs">
+            <div class="card-header" data-background-color="purple">
+                <div class="nav-tabs-navigation">
+                    <div class="nav-tabs-wrapper">
+                        <h3>Affichage du Projet </h3>
+                    </div>
+                </div>
+            </div>
+            <div class="card-content table-responsive">
+                <table class="table table-hover">
+                    <thead class="text-warning">
+            <tr>
+                <th>Id</th>
+                <td>{{ tache.id }}</td>
+            </tr>
+            <tr>
+                <th>Reftache</th>
+                <td>{{ tache.refTache }}</td>
+            </tr>
+            <tr>
+                <th>Designtache</th>
+                <td>{{ tache.designTache }}</td>
+            </tr>
+            <tr>
+                <th>Debuttache</th>
+                <td>{% if tache.debutTache %}{{ tache.debutTache|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Fintache</th>
+                <td>{% if tache.finTache %}{{ tache.finTache|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Etat</th>
+                <td>{{ tache.etat }}</td>
+            </tr>
+            <tr>
+                <th>Projet</th>
+                <td>{{ tache.projet }}</td>
+            </tr>
+        </tbody>
+    </table>
+                <a href="{{ path('tache_index') }}" rel="tooltip" title="Liste des Chefs de Projet" class="btn btn-primary btn-round" >
+                    <i class="material-icons">list</i>    </a>{{ form_start(delete_form) }}<input  type="submit" value="Delete" >{{ form_end(delete_form) }}
+
+
+{% endblock %}

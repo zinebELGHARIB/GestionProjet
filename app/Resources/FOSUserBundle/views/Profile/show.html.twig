@@ -1,0 +1,17 @@
+{% extends "::layout.html.twig" %}
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block container %}
+
+    {% include "@FOSUser/Profile/show_content.html.twig" %}
+
+{% endblock %}
+
+
+{% block javascripts %}
+
+    <script type="text/javascript">
+        $("#password") .click();
+    </script>
+
+{% endblock %}

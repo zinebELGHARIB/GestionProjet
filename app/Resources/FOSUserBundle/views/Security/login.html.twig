@@ -1,0 +1,80 @@
+{% extends "::base.html.twig" %}
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block body %}
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row center-block center-div">
+                <div class="col-md-4 col-sm-12 col-md-offset-4">
+                    <div class="card">
+                        <div class="card-header" data-background-color="purple" style="font-family: cursive;">
+                            <div class="col s12 header-element green">
+                                <div class="valign-wrapper">
+                                    <div class="container">
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="white-text text-center" style="font-weight: bold; font-size: 2.2rem; line-height: 30px;">Bienvenue sur la plateforme de Gestion des Projets</p>
+                            <p class="category text-center" style="font-weight: bold; font-size: 1.5rem">Identifiez-vous</p>
+                        </div>
+
+                        <div class="card-content">
+                            <form action="{{ path("fos_user_security_check") }}" method="post" id="loginForm">
+
+                                {% if error %}
+                                    <div id="msmerror" class="card red accent-2 grey-text text-lighten-2">
+                                        <div class="card-content">
+                                            {{ error.messageKey|trans(error.messageData, 'security') }}
+                                        </div>
+                                    </div>
+                                {% endif %}
+
+                                <div class="row">
+                                    <div class="col-md-2 col-sm-1">
+                                        <i class="material-icons prefix black-text">account_circle</i>
+                                    </div>
+                                    <div class="col-md-8 col-sm-10">
+                                        <div class="input-field form-group label-floating">
+                                            <input id="login" type="text" name="_username" value="{{ last_username }}" required="required" class="form-control validate">
+                                            <label class="control-label" for="login">Login</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-2">
+                                        <i class="material-icons prefix black-text">lock_outline</i>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="form-group label-floating">
+                                            <label class="control-label" for="password">Mot de passe</label>
+                                            <input id="password" type="password" name="_password" required="required" class="form-control validate">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="">
+                                    <button type="submit" title="Se connecter" name="action" class="btn btn-primary pull-right"><i class="material-icons right">send</i></button>
+                                    <div class="clearfix"></div>
+                                </div>
+                                {% if csrf_token %}
+                                    <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+                                {% endif %}
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+{% endblock body %}
+
+
+{% block javascripts %}
+
+    <script type="text/javascript">
+        $("#password") .click();
+    </script>
+
+{% endblock %}

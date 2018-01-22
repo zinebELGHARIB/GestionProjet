@@ -1,0 +1,40 @@
+adesigns_calendar:
+  resource: "@ADesignsCalendarBundle/Resources/config/routing.xml"
+ges_projet_personne:
+    resource: "@GesProjetBundle/Controller/PersonneController.php"
+    type:     annotation
+
+ges_projet_tache:
+    resource: "@GesProjetBundle/Controller/TacheController.php"
+    type:     annotation
+
+ges_projet_projet:
+    resource: "@GesProjetBundle/Controller/ProjetController.php"
+    type:     annotation
+
+user:
+    resource: "@UserBundle/Resources/config/routing.yml"
+    prefix:   /
+
+# duplicate key
+user:
+    resource: "@UserBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+ges_projet:
+    resource: "@GesProjetBundle/Resources/config/routing.yml"
+    prefix:   /
+
+
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+fos_js_routing:
+     resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"
+
+

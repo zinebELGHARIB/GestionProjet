@@ -1,0 +1,18 @@
+<div class="card card-nav-tabs">
+    <div class="card-header" data-background-color="purple">
+        <div class="nav-tabs-navigation">
+            <div class="nav-tabs-wrapper">
+                <h3>Ajout / Edition de l'utilisateur</h3>
+            </div>
+        </div>
+    </div>
+    <div class="card-content" >
+
+        {{ form_start(formUser, {'action': path('agent_adduser', {'id': agentID })}) }}
+        {{ form_widget(formUser) }}
+
+        <button type="submit" rel="tooltip" title="Enregistrer" class="btn btn-primary pull-right"><i class="material-icons">save</i></button>
+
+        {{ form_end(formUser) }}
+    </div>
+</div>

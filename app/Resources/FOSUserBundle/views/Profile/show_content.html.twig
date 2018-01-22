@@ -1,0 +1,91 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <span>
+            <a href="{{ path("fos_user_change_password") }}" class="btn btn-success pull-right" style="margin-left:20px;" rel="tooltip" title="Changer le Mot de passe">
+                <i class="large material-icons">security</i>
+            </a>
+            <a href="{{ path("fos_user_profile_edit") }}" class="btn btn-pinterest pull-right" style="margin-left:20px;" rel="tooltip" title="Modifier le profil">
+                <i class="large material-icons">portrait</i>
+            </a>
+            <a href="{{ path("dashboard") }}" class="btn btn-primary pull-left" rel="tooltip" title="Tableau de bord">
+                <i class="large material-icons">arrow_back</i>
+            </a>
+        </span>
+
+        <div class="card">
+
+            <div class="card-header" data-background-color="purple">
+                <h4 class="title">Gestion du profil utilisateur</h4>
+            </div>
+
+            <div class="card-content">
+
+                <div class="row">
+                    <div class="col-md-4 col-md-offset-2">
+                        <div class="form-group label-floating">
+                            <label class="control-label">Nom : </label>
+                            <input type="text" class="form-control" disabled value="{% if user.agent is defined and  user.agent is not null %} {{ user.agent.nom }} {% endif %}">
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="form-group label-floating">
+                            <label class="control-label">Prénom : </label>
+                            <input type="text" class="form-control" disabled value="{% if user.agent is defined  and  user.agent is not null %} {{ user.agent.prenom }} {% endif %}">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4 col-md-offset-2">
+                        <div class="form-group label-floating">
+                            <label class="control-label">Matricule : </label>
+                            <input type="text" class="form-control" disabled value="{% if user.agent is defined and  user.agent is not null  %} {{ user.agent.matricule }} {% endif %}">
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="form-group label-floating">
+                            <label class="control-label">Grade : </label>
+                            <input type="text" class="form-control" disabled value="{% if user.agent is defined  and  user.agent is not null %} {{ user.agent.grade }} {% endif %}">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4 col-md-offset-2">
+                        <div class="form-group label-floating">
+                            <label class="control-label">Nom d'utilisateur : </label>
+                            <input type="text" class="form-control" disabled value="{{ user.username }}">
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="form-group label-floating">
+                            <label class="control-label">Adresse E-mail : </label>
+                            <input type="text" class="form-control" disabled value="{{ user.email }}">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 col-md-offset-2">
+                        <div class="form-group label-floating">
+                            <label class="control-label">Téléphone : </label>
+                            <input type="text" class="form-control" disabled value="{% if user.agent is defined  and  user.agent is not null %} {{ user.agent.telephone }} {% endif %}">
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="form-group label-floating">
+                            <label class="control-label">Site : </label>
+                            <input type="text" class="form-control" disabled value="{{ user.email }}">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

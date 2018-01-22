@@ -1,0 +1,15 @@
+<script type="text/javascript">
+    {#var _dataMessageFlash = JSON.parse(`{{ _dataMessageFlashAll }}`);#}
+    //var _dataMessageFlash = {'success':['test']};
+    var _dataMessageFlashStr = $('.js-user-notifs').text();
+    var _dataMessageFlash = JSON.parse(_dataMessageFlashStr);
+
+    $(function(){
+
+        Object.keys(_dataMessageFlash).forEach(function (key) {
+            _dataMessageFlash[key].forEach(function (message) {
+                demo.showNotification('top','center',key, message);
+            });
+        })
+    });
+</script>
